@@ -53,7 +53,7 @@ return function(subdivisions)
 
   -- Splits vertices i and j, creating a new vertex and returning the index
   local function split(i, j)
-    local key = i < j and (i .. j) or (j .. i)
+    local key = i < j and (i .. ',' .. j) or (j .. ',' .. i)
 
     if not splits[key] then
       local x = (vertices[i][1] + vertices[j][1]) / 2
